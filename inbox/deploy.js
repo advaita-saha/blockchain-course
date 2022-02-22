@@ -1,9 +1,11 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
+const dotenv = require('dotenv');
 const { interface, bytecode } = require('./compile');
 
+dotenv.config();
 const provider = new HDWalletProvider(
-    'rally stable blind adult hungry resource people weekend wedding cram home seed',
+    process.env.SEED_PHRASE,
     'https://rinkeby.infura.io/v3/42b22014fc704adea44d3e65731592ba',
 );
 
